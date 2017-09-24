@@ -1,0 +1,87 @@
+<html>
+	<!-- <head>
+		<title>Headlines</title>
+	</head> -->
+	<div id="header">
+		<style>
+			html {
+			font-family: "Helvetica";
+			background: white;
+			}
+			body {
+				background: lightgrey;
+				max-width: 900px;
+				margin: 0 auto;
+			}
+			#header {
+				padding-top: 5;
+				background: lightsteelblue;
+			}
+			#inner-header {
+					padding-left: 10;
+			}
+				#main{
+					padding-left: 10;
+				}
+
+			input[type="text"], select {
+				color: red;
+				border: 1px solid lightsteelblue;
+				height: 30px;
+				line-height:15px;
+				margin: 2px 6px 16px 0px;
+				}
+				input[type="submit"] {
+				padding: 5px 10px 5px 10px;
+				color: black;
+				background: lightsteelblue;
+				border: none;
+				box-shadow: 1px 1px 1px #4C6E91;
+				}
+				input[type="submit"]:hover{
+				background: steelblue;
+				}
+			</style>
+		<h1>Headlines From RSS FEEDS</h1>
+		<p>News Headlines and  Weather   briefing</p>
+		<hr />
+	</div>
+	<body>
+
+			<div id="header">
+				<div id="inner-header">
+					<h1>Headlines</h1>
+					<p>Headlines  And  Weather.</p>
+				</div>
+				<hr />
+				</div>
+				<div id="main">
+
+		<h1>Headlines</h1>
+		<h2>Current weather</h2>
+		<p>City: <b>{{weather.city}}</b></p>
+		<p>{{weather.description}} |{{weather.temperature}}&#8451;</p>
+		<form>
+			<input type="text" name="city" placeholder="weather search">
+			<input type="submit" value="Submit">
+		</form>
+		<h2>Headlines</h2>
+		<p>You can search news headlines @ (cnn,voa,fox,news24,iol,bbc,sports)</p>
+		<form>
+			<input type="text" name="publication" placeholder="search" />
+			<input type="submit" value="Submit" />
+		</form>
+		{% for article in articles %}
+			<b><a href="{{article.link}}">{{article.title}}</a></b><br />
+			<i>{{article.published}}</i><br />
+			<p>{{article.summary}}</p>
+			<hr/>
+		{% endfor %}
+		</div>
+			
+	</body>
+	<footer><div id="header">
+		<div id="inner-header"><h2>End of Document Contact the developer at : dikeleon@gmail.com</h2><hr>
+		</div>
+		</div></footer>
+</html>
